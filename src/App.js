@@ -15,6 +15,7 @@ function App() {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
+    alert('handle link');
   };
 
   const styles = {

@@ -6,18 +6,19 @@ export default function MenuButton(props) {
 
   const handleClick = () => {
     setOpen(!open);
+    alert('clicked');
   };
 
   const styles = {
     container: {
-      height: "32px",
-      width: "32px",
+      height: "45px",
+      width: "45px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       cursor: "pointer",
-      padding: "4px",
+      padding: "6px",
     },
     line: {
       height: "2px",
