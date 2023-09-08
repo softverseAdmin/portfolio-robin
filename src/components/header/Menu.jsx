@@ -11,7 +11,7 @@ export default function Menu(props) {
       display: "flex",
       flexDirection: "column",
       background: "black",
-      opacity: 0.95,
+      opacity: 0.85,
       color: "#fff",
       transition: "height 0.3s ease",
       zIndex: 2,

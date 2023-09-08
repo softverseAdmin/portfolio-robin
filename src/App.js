@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
 import MenuItem from "./components/header/MenuItem";
 import MenuButton from "./components/header/MenuButton";
 import Menu from "./components/header/Menu";
 import Footer from "./components/footer/Footer";
-import TopContent from "./components/top/TopContent";
+import TopContent from "./components/top/TopContent"; // Import TopContent
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import About from "../src/components/about/About";
@@ -70,8 +69,7 @@ function App() {
       </div>
       <Menu open={menuOpen}>{menuItems}</Menu>
       <div className="MainContent">
-        {pathName === "/Top" && <TopContent />}
-        {pathName === "" && <TopContent />}
+        {pathName === "/" && <TopContent />} {/* Render TopContent */}
         {pathName === "/projects" && <Projects />}
         {pathName === "/contact" && <Contact />}
         {pathName === "/about" && <About />}
