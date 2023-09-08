@@ -15,11 +15,11 @@ export default function App() {
   return (
     <>
       <MDBNavbar
-        className="bg-light"
         style={{
           position: "absolute",
           zIndex: "3",
           width: "100vw",
+          backgroundColor: "#1d1d1d ",
         }}
       >
         <MDBContainer fluid>
@@ -32,7 +32,7 @@ export default function App() {
             aria-label="Toggle navigation"
             onClick={() => setShowNavExternal3(!showNavExternal3)}
           >
-            <MDBIcon icon="bars" fas size={"2x"}/>
+            <MDBIcon className="text-white" icon="bars" fas size={"2x"} />
           </MDBNavbarToggler>
         </MDBContainer>
       </MDBNavbar>
@@ -45,29 +45,54 @@ export default function App() {
         }}
         show={showNavExternal3}
       >
-        <div className="bg-light shadow-3 p-4 mt-4">
+        <div
+          className="shadow-3 p-4 mt-4"
+          style={{
+            backgroundColor: "#1d1d1d ",
+          }}
+        >
           <MDBContainer
-            className="d-flex justify-content-center mt-4 flex-column align-items-center gap-3"
+            className="d-flex container justify-content-center mt-4 flex-column align-items-center gap-3"
             fluid
           >
-            <MDBNavbarBrand className="text-primary" href="/home">
-              <MDBBtn outline color="success" className="me-2" type="button">
-                Navbar
+            <MDBNavbarBrand className="text-primary w-100" href="/home">
+              <MDBBtn
+                outline
+                color="success"
+                className="me-2 w-100"
+                type="button"
+              >
+                Home
               </MDBBtn>
             </MDBNavbarBrand>
-            <MDBNavbarBrand className="text-primary" href="/projects">
-              <MDBBtn outline color="success" className="me-2" type="button">
-                Navbar
+            <MDBNavbarBrand className="text-primary w-100" href="/projects">
+              <MDBBtn
+                outline
+                color="success"
+                className="me-2 w-100"
+                type="button"
+              >
+                About
               </MDBBtn>
             </MDBNavbarBrand>
-            <MDBNavbarBrand className="text-primary" href="/contact">
-              <MDBBtn outline color="success" className="me-2" type="button">
-                Navbar
+            <MDBNavbarBrand className="text-primary w-100" href="/contact">
+              <MDBBtn
+                outline
+                color="success"
+                className="me-2 w-100"
+                type="button"
+              >
+                Projects
               </MDBBtn>
             </MDBNavbarBrand>
-            <MDBNavbarBrand className="text-primary" href="/about">
-              <MDBBtn outline color="success" className="me-2" type="button">
-                Navbar
+            <MDBNavbarBrand className="text-primary w-100" href="/about">
+              <MDBBtn
+                outline
+                color="success"
+                className="me-2 w-100"
+                type="button"
+              >
+                Contact
               </MDBBtn>
             </MDBNavbarBrand>
           </MDBContainer>

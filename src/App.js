@@ -1,33 +1,78 @@
-import './assets/css/App.css';
-import './assets/js/App.js';
-import Navigation from './components/header/Navigation';
-import Navbody from './components/header/Navbody';
-import Contact from './components/Contact/Contact';
-import Projects from './components/Projects/Projects';
-import About from './components/About/About';
-import FullScreenMenu from './components/header/FullscreenMenu.jsx';
+import React, { useState } from "react";
+import "./assets/css/App.css";
+import "./assets/js/App.js";
+import MenuItem from "../src/components/header/MenuItem.jsx";
+import MenuButton from "../src/components/header/MenuButton.jsx";
+import Menu from "../src/components/header/Menu.jsx";
+import Footer from "../src/components/footer/Footer.jsx";
 
 function App() {
-  // get the web url: http://localhost:3000/about
-  const url = window.location.href;
-  // get an array using split and use last index as the address
-  const add = url.split("/");
-  const webAdd = add[add.length - 1];
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  const styles = {
+    container: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: "99",
+      opacity: 0.9,
+      display: "flex",
+      alignItems: "center",
+      background: "black",
+      width: "100%",
+      color: "white",
+      fontFamily: "Lobster",
+    },
+    logo: {
+      margin: "0 auto",
+    },
+    body: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100vw",
+      height: "100vh",
+      filter: menuOpen ? "blur(2px)" : null,
+      transition: "filter 0.5s ease",
+    },
+  };
+
+  const menu = [
+    "Who Am I?",
+    "What I Had Done?",
+    "What Can We Do?",
+    "What I Am Doing?",
+    "How To Reach Me?",
+    "What Is My Company?",
+  ];
+  const menuItems = menu.map((val, index) => (
+    <MenuItem key={index} delay={`${index * 0.1}s`} onClick={handleLinkClick}>
+      {val}
+    </MenuItem>
+  ));
 
   return (
-    <div className="App">
-      <div className="header head">
-        <FullScreenMenu />
+    <div>
+      <div style={styles.container}>
+        <MenuButton open={menuOpen} onClick={handleMenuClick} color="white" />
+        <div style={styles.logo}>Logo</div>
       </div>
-      <div className="body">
-        {/* conditional statement, comapare & return component */}
-        {webAdd === "home" && <Navbody/>}
-        {webAdd === "" && <Navbody />}
-        {webAdd === "projects" && <Projects />}
-        {webAdd === "contact" && <Contact />}
-        {webAdd === "about" && <About />}
+      <Menu open={menuOpen}>{menuItems}</Menu>
+      <div style={styles.body}>
+        <Footer name="Menu" />
       </div>
     </div>
   );
 }
+
 export default App;
+
+
