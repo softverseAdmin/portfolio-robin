@@ -28,7 +28,7 @@ export default function Footer(props) {
     <div style={styles.footer}>
       <div style={styles.line}></div>
       <div style={styles.text}>
-        {props.title} created by Softverse &copy; {new Date().getFullYear()};
+        {props.title} Powered By Softverse &copy; {new Date().getFullYear()};
       </div>
     </div>
   );
@@ -36,7 +36,7 @@ export default function Footer(props) {
 
 Footer.defaultProps = {
   color: "#fff",
-  title: "hello world!",
+  title: "Rabin Adhikari -",
 };
 
 

@@ -9,7 +9,7 @@ export default function MenuItem(props) {
 
   const styles = {
     container: {
-      opacity: 0.9,
+      opacity: 0,
       animation: "1s appear forwards",
       animationDelay: props.delay,
     },

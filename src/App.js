@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import "./assets/css/App.css";
-import "./assets/js/App.js";
-import MenuItem from "../src/components/header/MenuItem.jsx";
-import MenuButton from "../src/components/header/MenuButton.jsx";
-import Menu from "../src/components/header/Menu.jsx";
-import Footer from "../src/components/footer/Footer.jsx";
+
+import MenuItem from "./components/header/MenuItem";
+import MenuButton from "./components/header/MenuButton";
+import Menu from "./components/header/Menu";
+import Footer from "./components/footer/Footer";
+import TopContent from "./components/top/TopContent";
+import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
+import About from "../src/components/about/About";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +18,7 @@ function App() {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
-    alert('handle link');
+    alert("handle link");
   };
 
   const styles = {
@@ -32,9 +35,6 @@ function App() {
       color: "white",
       fontFamily: "Lobster",
     },
-    logo: {
-      margin: "0 auto",
-    },
     body: {
       display: "flex",
       flexDirection: "column",
@@ -46,6 +46,8 @@ function App() {
     },
   };
 
+  const pathName = window.location.pathname; // Get the path of the URL
+
   const menu = [
     "Who Am I?",
     "What I Had Done?",
@@ -54,6 +56,7 @@ function App() {
     "How To Reach Me?",
     "What Is My Company?",
   ];
+
   const menuItems = menu.map((val, index) => (
     <MenuItem key={index} delay={`${index * 0.1}s`} onClick={handleLinkClick}>
       {val}
@@ -64,9 +67,16 @@ function App() {
     <div>
       <div style={styles.container}>
         <MenuButton open={menuOpen} onClick={handleMenuClick} color="white" />
-        <div style={styles.logo}>Logo</div>
       </div>
       <Menu open={menuOpen}>{menuItems}</Menu>
+      <div className="MainContent">
+        {pathName === "/Top" && <TopContent />}
+        {pathName === "" && <TopContent />}
+        {pathName === "/projects" && <Projects />}
+        {pathName === "/contact" && <Contact />}
+        {pathName === "/about" && <About />}
+      </div>
+
       <div style={styles.body}>
         <Footer name="Menu" />
       </div>
@@ -75,5 +85,3 @@ function App() {
 }
 
 export default App;
-
-

@@ -1,8 +1,6 @@
 import React from 'react'
 
 export default function Menu(props) {
-
-
   const styles = {
     container: {
       position: "absolute",
