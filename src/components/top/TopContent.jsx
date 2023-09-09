@@ -8,7 +8,7 @@ import ButtonBackgroundShine from './ButtonBackgroundShine';
 const TopContent = () => {
   return (
     <motion.div
-      className="bg-image vw-100 position-absolute"
+      className="bg-image vw-100"
       style={{
         backgroundImage: `url(${rbn})`,
         backgroundPosition: "left",

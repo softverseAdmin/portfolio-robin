@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Footer(props) {
   const styles = {
     footer: {
-      position: "absolute",
+      position: "fixed",
       bottom: 0,
       width: "100%",
       marginTop: "1rem",
