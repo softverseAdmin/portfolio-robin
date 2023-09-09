@@ -17,7 +17,10 @@ function App() {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
-    alert("handle link");
+
+    
+    // change here for navigation 
+
   };
 
   const styles = {
@@ -45,7 +48,7 @@ function App() {
   };
 
   const pathName = window.location.pathname; // Get the path of the URL
-
+  console.log(pathName);
   const menu = [
     "Who Am I?",
     "What I Had Done?",
@@ -56,7 +59,9 @@ function App() {
   ];
 
   const menuItems = menu.map((val, index) => (
-    <MenuItem key={index} delay={`${index * 0.1}s`} onClick={handleLinkClick}>
+    <MenuItem 
+    key={index} delay={`${index * 0.1}s`} onClick={handleLinkClick}
+    >
       {val}
     </MenuItem>
   ));
@@ -68,10 +73,11 @@ function App() {
       </div>
       <Menu open={menuOpen}>{menuItems}</Menu>
       <div className="MainContent">
-        {pathName === "/" && <TopContent />} {/* Render TopContent */}
-        {pathName === "/projects" && <Projects />}
-        {pathName === "/contact" && <Contact />}
-        {pathName === "/about" && <About />}
+        {pathName === "/Who%20Am%20I" && <TopContent />}{" "}
+        {/* Render TopContent */}
+        {pathName === "/What%20I%20Had%20Done" && <Projects />}
+        {pathName === "/What%20Can%20We%20Do" && <Contact />}
+        {pathName === "/What%20I%20Am%20Doing" && <About />}
       </div>
 
       <div style={styles.body}>
