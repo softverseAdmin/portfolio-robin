@@ -16,7 +16,6 @@ import {
   SiJavascript
  } from "react-icons/si";
 import Typewriter from "typewriter-effect";
-import './About'; // Import your CSS file
 const divStyle = {
   height: "100%",
   backgroundImage: `url(${bgAbout})`,
