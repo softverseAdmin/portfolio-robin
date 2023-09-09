@@ -236,9 +236,6 @@ function ButtonBackgroundShine() {
                   <button type="button" className="btn btn-secondary" onClick={closeModal}>
                     Close
                   </button>
-                  <button type="button" className="btn btn-primary" onClick={closeModal}>
-                    Save Changes
-                  </button>
                 </div>
               </div>
           </div>
