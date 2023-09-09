@@ -20,11 +20,7 @@ export default function Projects() {
       url: "https://www.nepal-travel-guide.com/",
       img: img,
     },
-    {
-      customer: "Nepal Guide",
-      url: "https://www.nepal-travel-guide.com/",
-      img: img,
-    },
+    
   ];
   return (
     <div className="container-fluid d-flex align-items-center vh-100">
