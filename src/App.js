@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 import TopContent from "./components/top/TopContent"; // Import TopContent
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
-import About from "../src/components/about/About";
+import About from "./components/about/About";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
