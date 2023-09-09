@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 export default function MenuItem(props) {
+
   const [hover, setHover] = useState(false);
 
   const handleHover = () => {
@@ -42,7 +43,13 @@ export default function MenuItem(props) {
         onMouseLeave={handleHover}
         onClick={props.onClick}
       >
-        {props.children}
+        <a
+          style={styles.menuItem}
+          className="text-decoration-none m-0"
+          href={`/${props.children}`}
+        >
+          {props.children}
+        </a>
       </div>
       <div style={styles.line} />
     </div>
