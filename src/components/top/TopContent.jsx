@@ -3,6 +3,7 @@ import Typewriter from "typewriter-effect";
 import "../../assets/css/TopContent.css";
 import rbn from "../../assets/videos/rbn.png";
 import { motion } from "framer-motion";
+import ButtonBackgroundShine from './ButtonBackgroundShine';
 
 const TopContent = () => {
   return (
@@ -37,23 +38,12 @@ const TopContent = () => {
               />
             </div>
             <p className="fs-3 py-2 fst-normal text-start">
-              I provide real life solutions to your <br /> website & <br /> web
+              I provide real life solutions to your <br /> website & web
               application problems.
             </p>
 
             <div className="d-flex gap-4 w-75 justify-content-start">
-              <button
-                className="btn btn-dark btn-lg btn-outline-light"
-                style={{ width: "120px" }}
-              >
-                Resume
-              </button>
-              <button
-                className="btn btn-dark btn-lg btn-outline-light"
-                style={{ width: "120px" }}
-              >
-                Contact
-              </button>
+              <ButtonBackgroundShine className="background-shine-animation" /> 
             </div>
           </div>
         </div>

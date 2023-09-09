@@ -1,0 +1,15 @@
+/* Define the background-shine animation */
+@keyframes background-shine {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Apply the animation to an element with a class */
+  .background-shine-animation {
+    animation: background-shine 2s linear infinite;
+  }
+  
