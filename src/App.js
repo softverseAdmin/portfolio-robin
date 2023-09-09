@@ -7,6 +7,7 @@ import TopContent from "./components/top/TopContent"; // Import TopContent
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import About from "./components/about/About";
+import Faq from "./components/faq/Faq";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,12 +48,11 @@ function App() {
   const pathName = window.location.pathname; // Get the path of the URL
   console.log(pathName);
   const menu = [
+    "Top",
     "Who Am I?",
     "What I Had Done?",
-    "What Can We Do?",
-    "What I Am Doing?",
     "How To Reach Me?",
-    "What Is My Company?",
+    "FAQ",
   ];
 
   const menuItems = menu.map((val, index) => (
@@ -70,11 +70,12 @@ function App() {
       </div>
       <Menu open={menuOpen}>{menuItems}</Menu>
       <div className="MainContent">
-        {(!pathName || pathName.trim() === "/" || pathName === "/Who%20Am%20I") ? <TopContent /> : null}
+        {!pathName || pathName.trim() === "/" || pathName==='/Top' ? <TopContent /> : null}
         {/* Render TopContent */}
+        {pathName === "/Who%20Am%20I" && <About />}
         {pathName === "/What%20I%20Had%20Done" && <Projects />}
-        {pathName === "/What%20Can%20We%20Do" && <Contact />}
-        {pathName === "/What%20I%20Am%20Doing" && <About />}
+        {pathName === "/How%20To%20Reach%20Me" && <Contact />}
+        {pathName === "/FAQ" && <Faq />}
       </div>
 
       <div style={styles.body}>
