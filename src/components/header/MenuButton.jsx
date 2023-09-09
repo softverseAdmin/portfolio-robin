@@ -8,8 +8,8 @@ export default function MenuButton(props) {
     if (props.open !== open) {
       setOpen(props.open);
     }
-  }, [props.open]);
-
+  }, [props.open, open]); // Include 'open' in the dependency array
+  
   const handleClick = () => {
     setOpen(!open);
   };
