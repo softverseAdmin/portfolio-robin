@@ -17,10 +17,7 @@ function App() {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
-
-    
     // change here for navigation 
-
   };
 
   const styles = {
@@ -73,7 +70,7 @@ function App() {
       </div>
       <Menu open={menuOpen}>{menuItems}</Menu>
       <div className="MainContent">
-        {pathName === "/Who%20Am%20I" && <TopContent />}{" "}
+        {(!pathName || pathName.trim() === "/" || pathName === "/Who%20Am%20I") ? <TopContent /> : null}
         {/* Render TopContent */}
         {pathName === "/What%20I%20Had%20Done" && <Projects />}
         {pathName === "/What%20Can%20We%20Do" && <Contact />}

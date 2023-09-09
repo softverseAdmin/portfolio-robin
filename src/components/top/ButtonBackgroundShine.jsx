@@ -25,7 +25,7 @@ function ButtonBackgroundShine() {
         <tbody>
           <tr>
             <td>1</td>
-            <td>Project Overview Website</td>
+            <td>Product Overview Website</td>
             <td>・The project focuses on product benefits and tells its story using natural language.<br />
                 ・We adapt to user and admin requests and plans. <br />
                 ・Outsourcing work from Japan to Nepal.<br />
@@ -64,7 +64,6 @@ function ButtonBackgroundShine() {
                 Project Tester
             </td>
             <td>3</td>
-            <td></td>
           </tr>
           <tr>
             <td>3</td>

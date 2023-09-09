@@ -1,15 +1,33 @@
 import React from 'react';
-import img from '../../assets/videos/rbn.png';
-import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
-import { FaPhp, FaPython,  } from "react-icons/fa";
-import {RiJavascriptFill} from "react-icons/ri";
-import {SiMysql} from "react-icons/si";
+import bgAbout from "../../assets/videos/bgAbout.png";
+import {
+  SiFacebook, 
+  SiTwitter, 
+  SiLinkedin, 
+  SiInstagram, 
+  SiPinterest, 
+  SiMysql,
+  SiRubyonrails,
+  SiPostgresql,
+  SiTypescript,
+  SiAmazonaws,
+  SiPython,
+  SiPhp,
+  SiJavascript
+ } from "react-icons/si";
 
+import './About'; // Import your CSS file
+const divStyle = {
+  backgroundImage: `url(${bgAbout})`,
+  backgroundPosition: 'right',
+  backgroundRepeat: 'no-repeat', // Set background to not repeat
+   // Set the height to auto
+};
 export default function About() {
   return (
     <div className="container-fluid h-100">
       <div className="container d-flex justify-content-center align-items-center mt-5 py-4">
-        <div className="d-flex flex-column mt-5 w-50">
+        <div style={divStyle} className="justify-content-center align-items-center w-100">
           <div className="title my-3">
             <h3
               className="fs-5"
@@ -42,9 +60,9 @@ export default function About() {
               }}
               className="my-3 fs-5"
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quibusdam nobis repudiandae doloribus facere fugit, dolore
-              excepturi perspiciatis temporibus accusantium cum voluptat
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
+              Quibusdam nobis repudiandae doloribus facere fugit, dolore <br />
+              excepturi perspiciatis temporibus accusantium cum voluptat <br />
             </p>
           </div>
           <div className="d-flex gap-5">
@@ -52,35 +70,47 @@ export default function About() {
               <h3 className=""> FIND ME </h3>
               <div className="d-flex gap-5">
                 <a
-                  href=""
+                  href="https://www.facebook.com/rabin.adhikari.3532"
                   className="text-white bg-dark text-center shadow-lg"
                   style={{ width: "60px", height: "45px" }}
                 >
-                  <BsFacebook className="shadow-lg" size={40} />
+                  <SiFacebook className="shadow-lg" size={40} />
                 </a>
                 <a
-                  href=""
+                  href="https://twitter.com/shribinstore"
                   className="text-white bg-dark text-center shadow-lg"
                   style={{ width: "60px", height: "45px" }}
                 >
-                  <BsTwitter size={40} />
+                  <SiTwitter size={40} />
                 </a>
-                <a href="" className="text-white bg-dark rounded-circle text-center shadow-lg" style={{width: "60px", height:"60px"}}>
-                  <BsLinkedin size={40} />
+                <a href="https://www.linkedin.com/in/rabin-adhikari-52573320b/" className="text-white bg-dark rounded-circle text-center shadow-lg" style={{width: "60px", height:"60px"}}>
+                  <SiLinkedin size={40} />
+                </a>
+              </div>
+              <div className="d-flex gap-5">
+                <a href="https://www.linkedin.com/in/rabin-adhikari-52573320b/" className="text-white bg-dark rounded-circle text-center shadow-lg" style={{width: "60px", height:"60px"}}>
+                  <SiInstagram size={40} />
+                </a>
+                <a href="https://www.linkedin.com/in/rabin-adhikari-52573320b/" className="text-white bg-dark rounded-circle text-center shadow-lg" style={{width: "60px", height:"60px"}}>
+                  <SiPinterest size={40} />
                 </a>
               </div>
             </div>
             <div className="d-flex flex-column gap-4 px-3">
               <h3 className=""> BEST SKILLS ON </h3>
               <div className="d-flex gap-5">
-                <FaPhp size={40} /> <FaPython size={40} />
-                <RiJavascriptFill size={40} /> <SiMysql size={40} />
+                <SiPhp size={40} /> <SiPython size={40} />
+                <SiJavascript size={40} /> <SiMysql size={40} /> <br />
+              </div>
+              <div className='d-flex gap-5'>
+                <SiRubyonrails size={40} />
+                <SiPostgresql size={40} />
+                <SiTypescript size={40} />
+                <SiAmazonaws size={40} />
+                
               </div>
             </div>
           </div>
-        </div>
-        <div className="d-flex flex-column justify-content-center align-items-center w-50">
-          <img src={img} alt="" className="h-100" />
         </div>
       </div>
     </div>
