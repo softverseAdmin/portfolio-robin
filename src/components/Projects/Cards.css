@@ -1,11 +1,11 @@
 .card {
   position: relative;
   width: 30rem; /* Adjust as needed */
-  height: 12rem; /* Adjust as needed */
+  height: 20rem; /* Adjust as needed */
   overflow: hidden;
-  border: 1px solid #393BB2; /* Slate-800 color */
+  border: 2px solid #393BB2; /* Slate-800 color */
   border-radius: 1rem; /* Adjust as needed */
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 .borderGradient {
