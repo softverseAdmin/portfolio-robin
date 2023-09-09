@@ -1,24 +1,29 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from "react";
 
 export default function MenuButton(props) {
   const [open, setOpen] = useState(props.open || false);
   const [color] = useState(props.color || "black");
 
+  useEffect(() => {
+    if (props.open !== open) {
+      setOpen(props.open);
+    }
+  }, [props.open]);
+
   const handleClick = () => {
     setOpen(!open);
-    alert('clicked');
   };
 
   const styles = {
     container: {
-      height: "45px",
-      width: "45px",
+      height: "32px",
+      width: "32px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       cursor: "pointer",
-      padding: "6px",
+      padding: "4px",
     },
     line: {
       height: "2px",
@@ -43,7 +48,10 @@ export default function MenuButton(props) {
   };
 
   return (
-    <div style={styles.container} onClick={props.onClick || handleClick}>
+    <div
+      style={styles.container}
+      onClick={props.onClick ? props.onClick : handleClick}
+    >
       <div style={{ ...styles.line, ...styles.lineTop }} />
       <div style={{ ...styles.line, ...styles.lineMiddle }} />
       <div style={{ ...styles.line, ...styles.lineBottom }} />
