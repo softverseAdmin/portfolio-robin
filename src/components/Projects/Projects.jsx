@@ -1,90 +1,101 @@
-import React from "react";
-import Cards from "./Cards";
-import img from "../../assets/videos/ntg.png";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Keyboard,
-} from "swiper/modules";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import slide_image from "../../assets/videos/ntg.png";
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './Projects.css';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 
 export default function Projects() {
-  const data = [
-    {
-      customer: "Nepal Travel Guide",
-      url: "https://www.nepal-travel-guide.com/",
-      img: img,
-    },
-    {
-      customer: "Nepal Guide",
-      url: "https://www.nepal-travel-guide.com/",
-      img: img,
-    },
-    {
-      customer: "Travel Guide",
-      url: "https://www.nepal-travel-guide.com/",
-      img: img,
-    },
-    {
-      customer: "Travel Guide",
-      url: "https://www.nepal-travel-guide.com/",
-      img: img,
-    },
-  ];
+   const data = [
+     {
+       customer: "Nepal Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Nepal Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+     {
+       customer: "Travel Guide",
+       url: "https://www.nepal-travel-guide.com/",
+       img: slide_image,
+     },
+   ];
   return (
-    <div className="container-fluid d-flex align-items-center vh-100">
-      <div className="container flex-column">
-        <Swiper
-          slidesPerView={3}
-          centeredSlides={false}
-          slidesPerGroupSkip={1}
-          grabCursor={true}
-          keyboard={{
-            enabled: true,
-          }}
-          breakpoints={{
-            769: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-            },
-          }}
-          scrollbar={true}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-          className="mySwiper"
+    <div className="container p-4 d-flex align-items-center vh-100">
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        }}
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper_containerx"
+      >
+        {data.map((d, index) => {
+          const { img } = d;
+          return (
+            <SwiperSlide key={index}>
+              <img src={img} alt="image" />
+            </SwiperSlide>
+          );
+        })}
 
-          // modules={[Navigation, Pagination, Scrollbar, A11y,]}
-          // spaceBetween={200}
-          // slidesPerView={3}
-          // navigation
-          // pagination={{ clickable: true }}
-          // scrollbar={{ draggable: true }}
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
-        >
-          {data.map((d, index) => {
-            const { customer, url, img } = d;
-            return (
-              <SwiperSlide key={index}>
-                <Cards customer={customer} url={url} img={img} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+        <div className="slider-controler">
+          <div className="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </div>
+          <div className="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+          <div className="swiper-pagination"></div>
+        </div>
+      </Swiper>
     </div>
   );
 }
+
