@@ -45,7 +45,7 @@ export default function MenuItem(props) {
       >
         <a
           style={styles.menuItem}
-          className="text-decoration-none m-0"
+          className=" tex-white text-decoration-none m-0"
           href={`/${props.children}`}
         >
           {props.children}
