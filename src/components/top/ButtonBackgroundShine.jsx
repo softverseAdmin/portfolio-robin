@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './TopContent'; // Import your CSS file
+import Contact from "../contact/Contact";
 
 function ButtonBackgroundShine() {
   // State to track the modal's visibility
@@ -159,13 +160,16 @@ function ButtonBackgroundShine() {
       content: modalContent1,
     });
   };
+  const modalContent2 = (
+    <Contact></Contact>
+  );
 
   // Function to open the modal with content 2
   const openModal2 = () => {
     setIsModalOpen(true);
     setModalContent({
-      title: 'Modal Title 2',
-      content: 'Modal content for button 2 goes here...',
+      title: 'Contact Form',
+      content: modalContent2,
     });
   };
 
@@ -231,11 +235,6 @@ function ButtonBackgroundShine() {
                 </div>
                 <div className="modal-body" style={{overflow: 'scroll', height: '360px',}}>
                   {modalContent.content}
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" onClick={closeModal}>
-                    Close
-                  </button>
                 </div>
               </div>
           </div>

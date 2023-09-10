@@ -32,7 +32,7 @@
 
 .modal {
   display: flex;
-  width: 90%;
+  width: max-content;
   height: max-content;
   margin: auto;
   justify-content: center; /* Center horizontally */
